@@ -3,8 +3,14 @@ import { ref } from "vue";
 export function toDoListComposables() {
   const taskList = ref([]);
   const task = ref("");
+  const clearTask = () => {
+    task.value = "";
+  };
   const addTask = () => {
-    taskList.value.push(task.value);
+    if (task.value) {
+      taskList.value.push(task.value);
+      clearTask();
+    }
   };
   const removeTask = (index) => {
     taskList.value.splice(index, 1);

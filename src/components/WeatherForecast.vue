@@ -1,49 +1,19 @@
 <template>
   <div class="card_contain">
-    <div class="card">
-      <div style="margin-top: 10px; margin-left: 10px">
-        <input
-          type="input"
-          class="form__field"
-          placeholder="Задача"
-          name="name"
-          id="name"
-          required
-          v-model="task"
-        />
-      </div>
-      <button
-        style="margin-top: 10px; margin-left: 10px"
-        @click="addTask"
-        class="custom-btn btn-11"
-      >
-        Добавить задачу
-      </button>
-    </div>
-    <div class="content" v-if="taskList.length > 0">
-      <div class="task" v-for="(task, index) in taskList" :key="index">
-        <div>{{ task }}</div>
-        <div>
-          <button @click="removeTask(index)" class="custom-btn btn-small-11">
-            Удалить
-          </button>
-        </div>
-      </div>
-    </div>
+    <div class="card">{{ weatherForecastData }}</div>
   </div>
 </template>
 
 <script>
-import { toDoListComposables } from "../composables/TodoList/toDoList";
+import { WeatherForecastInit } from "../composables/WeatherForecast/WeatherForecatsCompasabels";
+
 export default {
-  name: "ToDoList",
+  name: "WeatherForecast",
   setup() {
-    const { taskList, task, addTask, removeTask } = toDoListComposables();
+    const { weatherForecastData, getWeatherForecast } = WeatherForecastInit;
     return {
-      task,
-      taskList,
-      addTask,
-      removeTask,
+      weatherForecastData,
+      getWeatherForecast,
     };
   },
 };
