@@ -3,7 +3,7 @@
     <div class="nav-logo">Test vue 3</div>
     <div>
       <RouterLink to="/" class="nav-tab">To do list</RouterLink>
-      <RouterLink to="/about" class="nav-tab">хуй</RouterLink>
+      <RouterLink to="/about" class="nav-tab">Прогноз погоды</RouterLink>
     </div>
   </div>
   <router-view />

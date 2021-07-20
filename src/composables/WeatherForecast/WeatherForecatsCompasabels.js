@@ -1,17 +1,16 @@
-import { onMounted, ref, watch } from "vue";
+import { onMounted, ref } from "vue";
 import { fetchWeatherForecast } from "../../helpers/api/apiConfig";
 
-export function WeatherForecastInit() {
-  const weatherForecastData = ref({});
+export default function useWeatherForecast() {
+  const forecast = ref({});
   const getWeatherForecast = async () => {
-    weatherForecastData.value = (await fetchWeatherForecast()).data;
+    forecast.value = await fetchWeatherForecast();
   };
 
   onMounted(getWeatherForecast);
-  watch(weatherForecastData, getWeatherForecast);
 
   return {
-    weatherForecastData,
+    forecast,
     getWeatherForecast,
   };
 }
