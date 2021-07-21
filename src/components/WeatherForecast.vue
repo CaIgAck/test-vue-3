@@ -1,19 +1,19 @@
 <template>
   <div class="card_contain">
-    <div class="card">{{ weatherForecastData }}</div>
+    <div class="card">{{ forecast }}</div>
   </div>
 </template>
 
 <script>
-import { WeatherForecastInit } from "../composables/WeatherForecast/WeatherForecatsCompasabels";
+import useWeatherForecast from "../composables/WeatherForecast/WeatherForecatsCompasabels";
 
 export default {
   name: "WeatherForecast",
   setup() {
     const { weatherForecastData, getWeatherForecast } = WeatherForecastInit();
     return {
-      weatherForecastData,
-      getWeatherForecast,
+      forecast,
+      getUserRepositories,
     };
   },
 };
