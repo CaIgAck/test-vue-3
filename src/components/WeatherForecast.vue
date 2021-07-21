@@ -10,7 +10,7 @@ import { WeatherForecastInit } from "../composables/WeatherForecast/WeatherForec
 export default {
   name: "WeatherForecast",
   setup() {
-    const { weatherForecastData, getWeatherForecast } = WeatherForecastInit;
+    const { weatherForecastData, getWeatherForecast } = WeatherForecastInit();
     return {
       weatherForecastData,
       getWeatherForecast,
