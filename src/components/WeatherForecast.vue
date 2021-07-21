@@ -10,10 +10,10 @@ import useWeatherForecast from "../composables/WeatherForecast/WeatherForecatsCo
 export default {
   name: "WeatherForecast",
   setup() {
-    const { weatherForecastData, getWeatherForecast } = WeatherForecastInit();
+    const { forecast, getWeatherForecast } = useWeatherForecast();
     return {
       forecast,
-      getUserRepositories,
+      getWeatherForecast,
     };
   },
 };
