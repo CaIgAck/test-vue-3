@@ -1,0 +1,10 @@
+{
+  "name": "test-vue-3",
+  "version": "1.0.0",
+  "description": "Test vue 3 and heroku App",
+  "author": "Saigak",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm install express"
+  }
+}

@@ -1,5 +1,5 @@
 import Axios from "axios";
-import apiKey from "./apiKey";
+import apiKey from "../apiKey";
 
 export function fetchWeatherForecast() {
   return Axios.get(
